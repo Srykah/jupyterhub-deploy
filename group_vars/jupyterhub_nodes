@@ -1,3 +1,5 @@
 ---
 docker_server_tls: yes
 docker_client_tls: yes
+rackspace_backup: no
+ubuntu_flavor: wily

@@ -2,3 +2,4 @@
 docker_server_tls: no
 docker_client_tls: yes
 rackspace_backup: yes
+ubuntu_flavor: xenial

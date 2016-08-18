@@ -1,7 +1,4 @@
 ---
-# Needed to make sure the API version matches with docker-py
-docker_api_version: 1.16
-
 # This is the auth token for JupyterHub. You can create it with:
 #     openssl rand -hex 16
 # Note that this should never be stored in plaintext; you should probably

@@ -2,6 +2,9 @@
 - name: install vim for ops sanity
   apt: update_cache=yes cache_valid_time=600 name=vim state=latest
 
+- name: install aptitude
+  apt: update_cache=yes cache_valid_time=600 name=aptitude state=latest
+
 - name: YOLO system upgrade
   apt: upgrade=safe
 
