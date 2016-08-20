@@ -88,7 +88,7 @@ formgrader:
       - jupyterhub
       - gradebook:postgres
     ports:
-      - "{{ servicenet_ip }}:9000:9000"
+      - "{{ servicenet_ip }}:9001:9001"
 
 stats:
     build: /srv/stats

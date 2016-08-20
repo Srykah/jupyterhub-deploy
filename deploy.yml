@@ -48,5 +48,5 @@
   - 'secrets.vault.yml'
   - 'users.vault.yml'
   roles:
-  # - restuser
+  - restuser
   - hub
