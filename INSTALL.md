@@ -56,7 +56,3 @@ For the whitelist of users, you need to copy `users.vault.yml.example` to `users
 ```
 ansible-vault encrypt --vault-password-file vault-password users.vault.yml
 ```
-
-## Other variables
-
-You'll need to set a few other variables. Copy `vars.yml.example` to `vars.yml` and edit it to include specifics for your deployment.
