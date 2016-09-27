@@ -49,7 +49,7 @@ jupyterhub:
 cull:
     build: /srv/cull
     restart: always
-    command: --timeout=86400 --cull_every=3600 --url=http://jupyterhub:8081/hub
+    command: --timeout=7200 --cull_every=600 --url=http://jupyterhub:8081/hub
     environment:
       JPY_API_TOKEN:
     links:
