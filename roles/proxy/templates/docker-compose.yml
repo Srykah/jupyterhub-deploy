@@ -11,7 +11,13 @@ nginx:
       - 80:80
       - 443:443
     volumes:
-      - "{{ ssl_key_path }}:{{ ssl_key_path }}:ro"
-      - "{{ ssl_cert_path }}:{{ ssl_cert_path }}:ro"
+      - letsencrypt:/etc/letsencrypt
+      - letsencrypt-backups:/var/lib/letsencrypt
+      - dhparam-cache:/cache
     volumes_from:
       - staticfiles
+    environment:
+      EMAIL: jessica.b.hamrick@gmail.com
+      DOMAIN: compmodels.tmpnb.org
+      UPSTREAM: {{ jupyterhub_host }}:8000
+      # STAGING: 1

@@ -7,9 +7,4 @@ docker_ca_cert: ''
 docker_tls_cert: ''
 docker_tls_key: ''
 
-# For the proxy server, you would want to have defined:
-
-ssl_cert: ''
-ssl_key: ''
-ssl_cert_path: ''
-ssl_key_path: ''
+# For the proxy server, you do not need to define anything.

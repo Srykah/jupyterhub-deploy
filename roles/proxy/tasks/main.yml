@@ -5,16 +5,18 @@
 - name: configuration directories
   file: state=directory dest=/srv/nginx mode=0755
 
-- name: SSL credentials
-  template: src={{ item.from }} dest={{ item.to }} mode=0644
+- name: docker volumes for let's encrypt
+  command: docker volume create --name {{ item }}
   with_items:
-  - from: ssl.key.j2
-    to: "{{ ssl_key_path }}"
-  - from: ssl.crt.j2
-    to: "{{ ssl_cert_path }}"
+    - letsencrypt
+    - letsencrypt-backups
+    - dhparam-cache
 
 - name: nginx configuration
   template: src=nginx.conf.j2 dest=/srv/nginx/nginx.conf mode=0644
+
+- name: nginx vhost configuration
+  template: src=vhost.sample.conf.j2 dest=/srv/nginx/vhost.sample.conf mode=0644
 
 - name: copy the Dockerfile to the nginx configuration directory
   template: src=Dockerfile.j2 dest=/srv/nginx/Dockerfile mode=0644
